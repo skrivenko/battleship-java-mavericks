@@ -1,7 +1,8 @@
-image: java
+image: openjdk:15
 
 stages: 
   - test
+  - build
   - analyze
 
 cache: 
@@ -11,7 +12,15 @@ cache:
 unit test:
   stage: test
   script:
-  - ./gradlew test
+    - ./gradlew test
+
+build:
+  stage: build
+  script:
+    - ./gradlew build
+  artifacts:
+    paths:
+      - ./console-app/build/distributions
 
 sonar:
   stage: analyze
