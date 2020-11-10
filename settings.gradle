@@ -1,4 +1,4 @@
-rootProject.name = 'battleship'
+rootProject.name = 'battleship-java'
 include 'console-app'
 include 'game-controller'
 
