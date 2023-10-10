@@ -61,6 +61,7 @@ public class Main {
             Position position = parsePosition(scanner.next());
             boolean isHit = GameController.checkIsHit(enemyFleet, position);
             if (isHit) {
+                beep();
                 System.out.println(messageBuilder.blowMessage().colorizedMessage());
                 System.out.println(messageBuilder.hitMessage().colorizedMessage());
 
@@ -77,6 +78,7 @@ public class Main {
             System.out.println(String.format("Computer shoot in %s%s", position.getColumn(), position.getRow()));
             if(isHit) {
                 System.out.println(messageBuilder.computerHitMessage().colorizedMessage());
+                beep();
                 System.out.println(messageBuilder.computerBlowMessage().colorizedMessage());
             } else {
                 System.out.println(messageBuilder.computerMissMessage().colorizedMessage());

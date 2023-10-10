@@ -24,9 +24,9 @@ public class GameShould {
         MessageBuilder messageBuilder = new MessageBuilder();
         Message message = messageBuilder.blowMessage();
 
-        assertEquals(new Message("                \\         .  ./\n" +
-                "              \\      .:\" \";'.:..\" \"   /\n" +
-                "                  (M^^.^~~:.'\" \").\n" +
+        assertEquals(new Message("                   \\  .  .  /\n" +
+                "              \\   .:\" \";'.:..\" \"   /\n" +
+                "                 (M^^.^~~:.'\" \")." +
                 "            -   (/  .    . . \\ \\)  -\n" +
                 "               ((| :. ~ ^  :. .|))\n" +
                 "            -   (\\- |  \\ /  |  /)  -\n" +
@@ -63,9 +63,9 @@ public class GameShould {
         MessageBuilder messageBuilder = new MessageBuilder();
         Message message = messageBuilder.computerBlowMessage();
 
-        assertEquals(new Message("                \\         .  ./\n" +
-                "              \\      .:\" \";'.:..\" \"   /\n" +
-                "                  (M^^.^~~:.'\" \").\n" +
+        assertEquals(new Message("                   \\  .  .  /\n" +
+                "              \\   .:\" \";'.:..\" \"   /\n" +
+                "                 (M^^.^~~:.'\" \")." +
                 "            -   (/  .    . . \\ \\)  -\n" +
                 "               ((| :. ~ ^  :. .|))\n" +
                 "            -   (\\- |  \\ /  |  /)  -\n" +

@@ -13,14 +13,14 @@ public class MessageBuilder {
 
     public Message blowMessage() {
         return new Message(
-                "                \\         .  ./\n" +
-                "              \\      .:\" \";'.:..\" \"   /\n" +
-                "                  (M^^.^~~:.'\" \").\n" +
-                "            -   (/  .    . . \\ \\)  -\n" +
-                "               ((| :. ~ ^  :. .|))\n" +
-                "            -   (\\- |  \\ /  |  /)  -\n" +
-                "                 -\\  \\     /  /-\n" +
-                "                   \\  \\   /  /", Attribute.GREEN_TEXT());
+                "                   \\  .  .  /\n" +
+                        "              \\   .:\" \";'.:..\" \"   /\n" +
+                        "                 (M^^.^~~:.'\" \").\n" +
+                        "            -   (/  .    . . \\ \\)  -\n" +
+                        "               ((| :. ~ ^  :. .|))\n" +
+                        "            -   (\\- |  \\ /  |  /)  -\n" +
+                        "                 -\\  \\     /  /-\n" +
+                        "                   \\  \\   /  /", Attribute.GREEN_TEXT());
     }
 
     public Message computerHitMessage() {
@@ -32,9 +32,10 @@ public class MessageBuilder {
     }
 
     public Message computerBlowMessage() {
-        return new Message("                \\         .  ./\n" +
-                "              \\      .:\" \";'.:..\" \"   /\n" +
-                "                  (M^^.^~~:.'\" \").\n" +
+        return new Message(
+                "                   \\  .  .  /\n" +
+                "              \\   .:\" \";'.:..\" \"   /\n" +
+                "                 (M^^.^~~:.'\" \").\n" +
                 "            -   (/  .    . . \\ \\)  -\n" +
                 "               ((| :. ~ ^  :. .|))\n" +
                 "            -   (\\- |  \\ /  |  /)  -\n" +
