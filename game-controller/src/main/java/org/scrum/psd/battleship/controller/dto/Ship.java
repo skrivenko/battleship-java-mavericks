@@ -85,4 +85,15 @@ public class Ship {
     public void setSize(int size) {
         this.size = size;
     }
+
+    public boolean isDestroyed() {
+        boolean destroyed = true;
+        for(Position position: positions) {
+            if(!position.isHit()) {
+                destroyed = false;
+            }
+        }
+        return destroyed;
+    }
+
 }

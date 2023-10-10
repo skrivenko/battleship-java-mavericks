@@ -9,7 +9,36 @@ import org.scrum.psd.battleship.controller.dto.Ship;
 import java.util.Arrays;
 import java.util.List;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class GameControllerTest {
+
+
+    @Test
+    public void showFirstFieldIsHitWhenAttacked() {
+        Ship ship = new Ship();
+        ship.setPositions(Arrays.asList(
+                new Position(Letter.A, 1),
+                new Position(Letter.A, 2)
+        ));
+
+        GameController.checkIsHit(Arrays.asList(ship), new Position(Letter.A, 1));
+        assertTrue(ship.getPositions().get(0).isHit());
+    }
+
+    @Test
+    public void showDestroyedShipWhenAllFieldsAttacked() {
+        Ship ship = new Ship();
+        ship.setPositions(Arrays.asList(
+                new Position(Letter.A, 1),
+                new Position(Letter.A, 2)
+        ));
+
+        GameController.checkIsHit(Arrays.asList(ship), new Position(Letter.A, 1));
+        GameController.checkIsHit(Arrays.asList(ship), new Position(Letter.A, 2));
+        assertTrue(ship.isDestroyed());
+    }
+
     @Test
     public void testCheckIsHitTrue() {
         List<Ship> ships = GameController.initializeShips();
