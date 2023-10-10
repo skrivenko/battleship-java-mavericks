@@ -40,6 +40,7 @@ public class Main {
 
     private static void StartGame() {
         Scanner scanner = new Scanner(System.in);
+        MessageBuilder messageBuilder = new MessageBuilder();
 
         System.out.print("\033[2J\033[;H");
         System.out.println("                  __");
@@ -60,39 +61,30 @@ public class Main {
             Position position = parsePosition(scanner.next());
             boolean isHit = GameController.checkIsHit(enemyFleet, position);
             if (isHit) {
-                beep();
+                System.out.println(messageBuilder.blowMessage().colorizedMessage());
+                System.out.println(messageBuilder.hitMessage().colorizedMessage());
 
-                System.out.println("                \\         .  ./");
-                System.out.println("              \\      .:\" \";'.:..\" \"   /");
-                System.out.println("                  (M^^.^~~:.'\" \").");
-                System.out.println("            -   (/  .    . . \\ \\)  -");
-                System.out.println("               ((| :. ~ ^  :. .|))");
-                System.out.println("            -   (\\- |  \\ /  |  /)  -");
-                System.out.println("                 -\\  \\     /  /-");
-                System.out.println("                   \\  \\   /  /");
+            } else{
+                System.out.println(messageBuilder.missMessage().colorizedMessage());
             }
 
-            System.out.println(isHit ? "Yeah ! Nice hit !" : "Miss");
             telemetry.trackEvent("Player_ShootPosition", "Position", position.toString(), "IsHit", Boolean.valueOf(isHit).toString());
 
             position = getRandomPosition();
             isHit = GameController.checkIsHit(myFleet, position);
             System.out.println("");
-            System.out.println(String.format("Computer shoot in %s%s and %s", position.getColumn(), position.getRow(), isHit ? "hit your ship !" : "miss"));
-            telemetry.trackEvent("Computer_ShootPosition", "Position", position.toString(), "IsHit", Boolean.valueOf(isHit).toString());
-            if (isHit) {
-                beep();
 
-                System.out.println("                \\         .  ./");
-                System.out.println("              \\      .:\" \";'.:..\" \"   /");
-                System.out.println("                  (M^^.^~~:.'\" \").");
-                System.out.println("            -   (/  .    . . \\ \\)  -");
-                System.out.println("               ((| :. ~ ^  :. .|))");
-                System.out.println("            -   (\\- |  \\ /  |  /)  -");
-                System.out.println("                 -\\  \\     /  /-");
-                System.out.println("                   \\  \\   /  /");
+            System.out.println(String.format("Computer shoot in %s%s", position.getColumn(), position.getRow()));
+            if(isHit) {
+                System.out.println(messageBuilder.computerHitMessage().colorizedMessage());
+                System.out.println(messageBuilder.computerBlowMessage().colorizedMessage());
+            } else {
+                System.out.println(messageBuilder.computerMissMessage().colorizedMessage());
 
             }
+
+            telemetry.trackEvent("Computer_ShootPosition", "Position", position.toString(), "IsHit", Boolean.valueOf(isHit).toString());
+
         } while (true);
     }
 
