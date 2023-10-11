@@ -137,7 +137,6 @@ public class Main {
 
             System.out.println("Your ship is ready");
 
-//            System.out.println("\n----\n"+ ship.toString()+ "\n----\n");
         }
     }
 

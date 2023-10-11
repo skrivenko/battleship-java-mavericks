@@ -126,14 +126,12 @@ public class Ship {
         Direction direction = Direction.valueOf(input.toUpperCase().substring(2));
 
         if (direction == Direction.R) {
-            while (positions.size() != this.size) {
-
-
+            while (positions.size() < this.size - 1) {
                 positions.add(new Position(letter, number));
                 number++;
             }
         } else {
-            while (positions.size() != this.size) {
+            while (positions.size() < this.size -1) {
                 positions.add(new Position(letter, number));
                 letter = Letter.nextLetter(letter);
             }
