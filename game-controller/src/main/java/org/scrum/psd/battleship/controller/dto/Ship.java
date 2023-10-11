@@ -2,6 +2,7 @@ package org.scrum.psd.battleship.controller.dto;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Ship {
     private boolean isPlaced;
@@ -24,6 +25,12 @@ public class Ship {
     public Ship(String name, int size, List<Position> positions) {
         this(name, size);
 
+        this.positions = positions;
+    }
+
+    public Ship(String name, int size, Color color, List<Position> positions) {
+        this(name, size);
+        this.color = color;
         this.positions = positions;
     }
 
@@ -96,4 +103,16 @@ public class Ship {
         return destroyed;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Ship)) return false;
+        Ship ship = (Ship) o;
+        return isPlaced == ship.isPlaced && size == ship.size && Objects.equals(name, ship.name) && Objects.equals(positions, ship.positions) && color == ship.color;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(isPlaced, name, size, positions, color);
+    }
 }

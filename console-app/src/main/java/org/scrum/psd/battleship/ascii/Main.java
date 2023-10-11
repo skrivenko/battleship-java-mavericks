@@ -15,6 +15,7 @@ public class Main {
     private static List<Ship> enemyFleet;
 
     private static final Telemetry telemetry = new Telemetry();
+    private static final ShipsFactory shipsFactory = new ShipsFactory(new RandomSetupGenerator());
 
     public static void main(String[] args) {
         telemetry.trackEvent("ApplicationStarted", "Technology", "Java");
@@ -136,28 +137,6 @@ public class Main {
     }
 
     private static void InitializeEnemyFleet() {
-        enemyFleet = GameController.initializeShips();
-
-        enemyFleet.get(0).getPositions().add(new Position(Letter.B, 4));
-        enemyFleet.get(0).getPositions().add(new Position(Letter.B, 5));
-        enemyFleet.get(0).getPositions().add(new Position(Letter.B, 6));
-        enemyFleet.get(0).getPositions().add(new Position(Letter.B, 7));
-        enemyFleet.get(0).getPositions().add(new Position(Letter.B, 8));
-
-        enemyFleet.get(1).getPositions().add(new Position(Letter.E, 6));
-        enemyFleet.get(1).getPositions().add(new Position(Letter.E, 7));
-        enemyFleet.get(1).getPositions().add(new Position(Letter.E, 8));
-        enemyFleet.get(1).getPositions().add(new Position(Letter.E, 9));
-
-        enemyFleet.get(2).getPositions().add(new Position(Letter.A, 3));
-        enemyFleet.get(2).getPositions().add(new Position(Letter.B, 3));
-        enemyFleet.get(2).getPositions().add(new Position(Letter.C, 3));
-
-        enemyFleet.get(3).getPositions().add(new Position(Letter.F, 8));
-        enemyFleet.get(3).getPositions().add(new Position(Letter.G, 8));
-        enemyFleet.get(3).getPositions().add(new Position(Letter.H, 8));
-
-        enemyFleet.get(4).getPositions().add(new Position(Letter.C, 5));
-        enemyFleet.get(4).getPositions().add(new Position(Letter.C, 6));
+        enemyFleet = shipsFactory.createShips();
     }
 }
