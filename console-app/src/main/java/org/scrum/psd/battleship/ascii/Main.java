@@ -58,7 +58,7 @@ public class Main {
         do {
             System.out.println("");
             System.out.println("Player, it's your turn");
-            System.out.println("Enter coordinates for your shot :");
+            System.out.println("Enter coordinates for your shot:");
             Position position = parsePosition(scanner.next());
             boolean isHit = GameController.checkIsHit(enemyFleet, position);
             if (isHit) {

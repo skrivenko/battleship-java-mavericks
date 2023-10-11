@@ -1,11 +1,7 @@
 package org.scrum.psd.battleship.ascii;
 
 import com.diogonunes.jcolor.Attribute;
-import org.junit.Assert;
-import org.junit.ClassRule;
 import org.junit.Test;
-import org.junit.contrib.java.lang.system.SystemOutRule;
-import org.junit.contrib.java.lang.system.TextFromStandardInputStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -16,7 +12,7 @@ public class MessageBuilderShould {
         MessageBuilder messageBuilder = new MessageBuilder();
         Message message = messageBuilder.hitMessage();
 
-        assertEquals(new Message("Yeah ! Nice hit !", Attribute.GREEN_TEXT()), message);
+        assertEquals(new Message("Yeah! Nice hit!", Attribute.RED_TEXT()), message);
     }
 
     @Test
@@ -24,14 +20,15 @@ public class MessageBuilderShould {
         MessageBuilder messageBuilder = new MessageBuilder();
         Message message = messageBuilder.blowMessage();
 
-        assertEquals(new Message("                   \\  .  .  /\n" +
-                "              \\   .:\" \";'.:..\" \"   /\n" +
-                "                 (M^^.^~~:.'\" \")." +
-                "            -   (/  .    . . \\ \\)  -\n" +
-                "               ((| :. ~ ^  :. .|))\n" +
-                "            -   (\\- |  \\ /  |  /)  -\n" +
-                "                 -\\  \\     /  /-\n" +
-                "                   \\  \\   /  /", Attribute.GREEN_TEXT()), message);
+        assertEquals(new Message(
+                "                   \\  .  .  /\n" +
+                        "              \\   .:\" \";'.:..\" \"   /\n" +
+                        "                 (M^^.^~~:.'\" \").\n" +
+                        "            -   (/  .    . . \\ \\)  -\n" +
+                        "               ((| :. ~ ^  :. .|))\n" +
+                        "            -   (\\- |  \\ /  |  /)  -\n" +
+                        "                 -\\  \\     /  /-\n" +
+                        "                   \\  \\   /  /", Attribute.RED_TEXT()), message);
     }
 
     @Test
@@ -39,7 +36,7 @@ public class MessageBuilderShould {
         MessageBuilder messageBuilder = new MessageBuilder();
         Message message = messageBuilder.missMessage();
 
-        assertEquals(new Message("Miss", Attribute.RED_TEXT()), message);
+        assertEquals(new Message("You miss", Attribute.BLUE_TEXT()), message);
     }
 
     @Test
@@ -47,7 +44,7 @@ public class MessageBuilderShould {
         MessageBuilder messageBuilder = new MessageBuilder();
         Message message = messageBuilder.computerHitMessage();
 
-        assertEquals(new Message("Hit your ship !", Attribute.RED_TEXT()), message);
+        assertEquals(new Message("Hit your ship!", Attribute.RED_TEXT()), message);
     }
 
     @Test
@@ -55,7 +52,7 @@ public class MessageBuilderShould {
         MessageBuilder messageBuilder = new MessageBuilder();
         Message message = messageBuilder.computerMissMessage();
 
-        assertEquals(new Message("Miss", Attribute.GREEN_TEXT()), message);
+        assertEquals(new Message("Computer miss", Attribute.BLUE_TEXT()), message);
     }
 
     @Test
@@ -63,14 +60,15 @@ public class MessageBuilderShould {
         MessageBuilder messageBuilder = new MessageBuilder();
         Message message = messageBuilder.computerBlowMessage();
 
-        assertEquals(new Message("                   \\  .  .  /\n" +
-                "              \\   .:\" \";'.:..\" \"   /\n" +
-                "                 (M^^.^~~:.'\" \")." +
-                "            -   (/  .    . . \\ \\)  -\n" +
-                "               ((| :. ~ ^  :. .|))\n" +
-                "            -   (\\- |  \\ /  |  /)  -\n" +
-                "                 -\\  \\     /  /-\n" +
-                "                   \\  \\   /  /", Attribute.RED_TEXT()), message);
+        assertEquals(new Message(
+                "                   \\  .  .  /\n" +
+                        "              \\   .:\" \";'.:..\" \"   /\n" +
+                        "                 (M^^.^~~:.'\" \").\n" +
+                        "            -   (/  .    . . \\ \\)  -\n" +
+                        "               ((| :. ~ ^  :. .|))\n" +
+                        "            -   (\\- |  \\ /  |  /)  -\n" +
+                        "                 -\\  \\     /  /-\n" +
+                        "                   \\  \\   /  /", Attribute.RED_TEXT()), message);
     }
 
 }
