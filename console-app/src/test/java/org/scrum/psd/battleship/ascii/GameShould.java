@@ -63,4 +63,15 @@ public class GameShould {
             assertTrue(setupNumber >= 1);
         }
     }
+
+    @Test
+    public void showCreateOneOfTheRandomSetups() {
+
+        RandomSetupGenerator generator = new RandomSetupGenerator();
+        ShipsFactory factory = new ShipsFactory(generator);
+
+        for (int i = 0; i < 10; i++) {
+           assertTrue(ShipsFactory.SETUPS.containsValue(factory.createShips()));
+        }
+    }
 }

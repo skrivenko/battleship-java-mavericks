@@ -104,61 +104,62 @@ public class ShipsFactory {
 
         SETUPS.put(4, Arrays.asList(
                 new Ship("Aircraft Carrier", 5, Color.CADET_BLUE, Arrays.asList(
-                        new Position(Letter.C, 1),
+                        new Position(Letter.B, 3),
+                        new Position(Letter.B, 4),
+                        new Position(Letter.B, 5),
+                        new Position(Letter.B, 6),
+                        new Position(Letter.B, 7)
+                )),
+                new Ship("Battleship", 4, Color.RED, Arrays.asList(
                         new Position(Letter.D, 1),
                         new Position(Letter.E, 1),
                         new Position(Letter.F, 1),
                         new Position(Letter.G, 1)
                 )),
-                new Ship("Battleship", 4, Color.RED, Arrays.asList(
-                        new Position(Letter.G, 4),
-                        new Position(Letter.G, 5),
-                        new Position(Letter.G, 6),
-                        new Position(Letter.G, 7)
-                )),
                 new Ship("Submarine", 3, Color.CHARTREUSE, Arrays.asList(
-                        new Position(Letter.E, 4),
-                        new Position(Letter.E, 5),
-                        new Position(Letter.E, 6)
+                        new Position(Letter.D, 3),
+                        new Position(Letter.E, 3),
+                        new Position(Letter.F, 3)
                 )),
                 new Ship("Destroyer", 3, Color.YELLOW, Arrays.asList(
-                        new Position(Letter.C, 8),
-                        new Position(Letter.D, 8),
-                        new Position(Letter.E, 8)
+                        new Position(Letter.E, 5),
+                        new Position(Letter.E, 6),
+                        new Position(Letter.E, 7)
                 )),
                 new Ship("Patrol Boat", 2, Color.ORANGE, Arrays.asList(
-                        new Position(Letter.A, 6),
-                        new Position(Letter.B, 6)
+                        new Position(Letter.H, 5),
+                        new Position(Letter.H, 6)
                 ))));
 
         SETUPS.put(5, Arrays.asList(
                 new Ship("Aircraft Carrier", 5, Color.CADET_BLUE, Arrays.asList(
+                        new Position(Letter.A, 2),
+                        new Position(Letter.A, 3),
+                        new Position(Letter.A, 4),
+                        new Position(Letter.A, 5),
+                        new Position(Letter.A, 6)
+                )),
+                new Ship("Battleship", 4, Color.RED, Arrays.asList(
                         new Position(Letter.C, 1),
                         new Position(Letter.D, 1),
                         new Position(Letter.E, 1),
-                        new Position(Letter.F, 1),
-                        new Position(Letter.G, 1)
-                )),
-                new Ship("Battleship", 4, Color.RED, Arrays.asList(
-                        new Position(Letter.G, 4),
-                        new Position(Letter.G, 5),
-                        new Position(Letter.G, 6),
-                        new Position(Letter.G, 7)
+                        new Position(Letter.F, 1)
                 )),
                 new Ship("Submarine", 3, Color.CHARTREUSE, Arrays.asList(
-                        new Position(Letter.E, 4),
-                        new Position(Letter.E, 5),
-                        new Position(Letter.E, 6)
+                        new Position(Letter.F, 3),
+                        new Position(Letter.G, 3),
+                        new Position(Letter.H, 3)
                 )),
                 new Ship("Destroyer", 3, Color.YELLOW, Arrays.asList(
-                        new Position(Letter.C, 8),
-                        new Position(Letter.D, 8),
-                        new Position(Letter.E, 8)
+                        new Position(Letter.D, 6),
+                        new Position(Letter.D, 7),
+                        new Position(Letter.D, 8)
                 )),
                 new Ship("Patrol Boat", 2, Color.ORANGE, Arrays.asList(
-                        new Position(Letter.A, 6),
-                        new Position(Letter.B, 6)
+                        new Position(Letter.G, 8),
+                        new Position(Letter.H, 8)
                 ))));
+
     }
 
     private SetupGenerator setupGenerator;
