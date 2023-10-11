@@ -68,6 +68,7 @@ public class Main {
 
             } else{
                 System.out.println(messageBuilder.missMessage().colorizedMessage());
+                System.out.println(messageBuilder.missPictureMessage().colorizedMessage());
             }
 
             telemetry.trackEvent("Player_ShootPosition", "Position", position.toString(), "IsHit", Boolean.valueOf(isHit).toString());
@@ -83,7 +84,7 @@ public class Main {
                 System.out.println(messageBuilder.computerBlowMessage().colorizedMessage());
             } else {
                 System.out.println(messageBuilder.computerMissMessage().colorizedMessage());
-
+                System.out.println(messageBuilder.missPictureMessage().colorizedMessage());
             }
 
             telemetry.trackEvent("Computer_ShootPosition", "Position", position.toString(), "IsHit", Boolean.valueOf(isHit).toString());

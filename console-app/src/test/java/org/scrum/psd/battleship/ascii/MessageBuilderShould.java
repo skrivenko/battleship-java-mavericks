@@ -73,4 +73,18 @@ public class MessageBuilderShould {
                 "                   \\  \\   /  /", Attribute.RED_TEXT()), message);
     }
 
+    @Test
+    public void showMissWaterMessage() {
+        MessageBuilder messageBuilder = new MessageBuilder();
+        Message message = messageBuilder.missPictureMessage();
+
+        assertEquals(new Message(
+                "      ~~~~   ~~~~   ~~~~\n" +
+                        "  ~~~~~   ~~~~   ~~~~   ~~~~~\n" +
+                        "~~~~~  ~~~~   ~~~~   ~~~~  ~~~~~\n" +
+                        " ~~~~  ~  _  ~~~~   _  ~~~~  ~~~\n" +
+                        "   ~~~~~  (_)    ~ (_)  ~~~~~\n" +
+                        "           ~~~~~~~~~", Attribute.BLUE_TEXT()), message);
+    }
+
 }

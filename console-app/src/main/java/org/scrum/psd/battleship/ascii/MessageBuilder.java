@@ -4,7 +4,7 @@ import com.diogonunes.jcolor.Attribute;
 
 public class MessageBuilder {
     public Message hitMessage() {
-        return new Message("Yeah ! Nice hit !", Attribute.GREEN_TEXT());
+        return new Message("Yeah! Nice hit!", Attribute.GREEN_TEXT());
     }
 
     public Message missMessage() {
@@ -20,11 +20,11 @@ public class MessageBuilder {
                         "               ((| :. ~ ^  :. .|))\n" +
                         "            -   (\\- |  \\ /  |  /)  -\n" +
                         "                 -\\  \\     /  /-\n" +
-                        "                   \\  \\   /  /", Attribute.GREEN_TEXT());
+                        "                   \\  \\   /  /", Attribute.BRIGHT_RED_TEXT());
     }
 
     public Message computerHitMessage() {
-        return new Message("Hit your ship !", Attribute.RED_TEXT());
+        return new Message("Hit your ship!", Attribute.RED_TEXT());
     }
 
     public Message computerMissMessage() {
@@ -41,5 +41,15 @@ public class MessageBuilder {
                 "            -   (\\- |  \\ /  |  /)  -\n" +
                 "                 -\\  \\     /  /-\n" +
                 "                   \\  \\   /  /", Attribute.RED_TEXT());
+    }
+
+    public Message missPictureMessage() {
+        return new Message(
+                "      ~~~~   ~~~~   ~~~~\n" +
+                        "  ~~~~~   ~~~~   ~~~~   ~~~~~\n" +
+                        "~~~~~  ~~~~   ~~~~   ~~~~  ~~~~~\n" +
+                        " ~~~~  ~  _  ~~~~   _  ~~~~  ~~~\n" +
+                        "   ~~~~~  (_)    ~ (_)  ~~~~~\n" +
+                        "           ~~~~~~~~~", Attribute.BLUE_TEXT());
     }
 }
