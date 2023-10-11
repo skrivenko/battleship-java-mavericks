@@ -95,8 +95,8 @@ public class Ship {
 
     public boolean isDestroyed() {
         boolean destroyed = true;
-        for(Position position: positions) {
-            if(!position.isHit()) {
+        for (Position position : positions) {
+            if (!position.isHit()) {
                 destroyed = false;
             }
         }
@@ -114,5 +114,41 @@ public class Ship {
     @Override
     public int hashCode() {
         return Objects.hash(isPlaced, name, size, positions, color);
+    }
+
+    public boolean placeLeftTopCorner(String input) {
+        if (positions == null) {
+            positions = new ArrayList<>();
+        }
+
+        Letter letter = Letter.valueOf(input.toUpperCase().substring(0, 1));
+        int number = Integer.parseInt(input.substring(1, 2));
+        Direction direction = Direction.valueOf(input.toUpperCase().substring(2));
+
+        if (direction == Direction.R) {
+            while (positions.size() != this.size) {
+
+
+                positions.add(new Position(letter, number));
+                number++;
+            }
+        } else {
+            while (positions.size() != this.size) {
+                positions.add(new Position(letter, number));
+                letter = Letter.nextLetter(letter);
+            }
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Ship{" +
+                "isPlaced=" + isPlaced +
+                ", name='" + name + '\'' +
+                ", size=" + size +
+                ", positions=" + positions +
+                ", color=" + color +
+                '}';
     }
 }

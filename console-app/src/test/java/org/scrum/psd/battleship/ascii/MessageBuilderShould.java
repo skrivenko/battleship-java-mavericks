@@ -28,7 +28,7 @@ public class MessageBuilderShould {
                         "               ((| :. ~ ^  :. .|))\n" +
                         "            -   (\\- |  \\ /  |  /)  -\n" +
                         "                 -\\  \\     /  /-\n" +
-                        "                   \\  \\   /  /", Attribute.RED_TEXT()), message);
+                        "                   \\  \\   /  /", Attribute.BRIGHT_RED_TEXT()), message);
     }
 
     @Test

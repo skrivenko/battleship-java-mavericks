@@ -5,10 +5,12 @@ import org.scrum.psd.battleship.controller.dto.Letter;
 import org.scrum.psd.battleship.controller.dto.Position;
 import org.scrum.psd.battleship.controller.dto.Ship;
 
-import java.util.*;
+import java.util.List;
+import java.util.Random;
+import java.util.Scanner;
 
 import static com.diogonunes.jcolor.Ansi.colorize;
-import static com.diogonunes.jcolor.Attribute.*;
+import static com.diogonunes.jcolor.Attribute.MAGENTA_TEXT;
 
 public class Main {
     private static List<Ship> myFleet;
@@ -66,7 +68,7 @@ public class Main {
                 System.out.println(messageBuilder.blowMessage().colorizedMessage());
                 System.out.println(messageBuilder.hitMessage().colorizedMessage());
 
-            } else{
+            } else {
                 System.out.println(messageBuilder.missMessage().colorizedMessage());
                 System.out.println(messageBuilder.missPictureMessage().colorizedMessage());
             }
@@ -78,7 +80,7 @@ public class Main {
             System.out.println("");
 
             System.out.println(String.format("Computer shoot in %s%s", position.getColumn(), position.getRow()));
-            if(isHit) {
+            if (isHit) {
                 System.out.println(messageBuilder.computerHitMessage().colorizedMessage());
                 beep();
                 System.out.println(messageBuilder.computerBlowMessage().colorizedMessage());
@@ -126,14 +128,16 @@ public class Main {
 
         for (Ship ship : myFleet) {
             System.out.println("");
-            System.out.println(String.format("Please enter the positions for the %s (size: %s)", ship.getName(), ship.getSize()));
-            for (int i = 1; i <= ship.getSize(); i++) {
-                System.out.println(String.format("Enter position %s of %s (i.e A3):", i, ship.getSize()));
+            System.out.printf("Please enter the positions for the %s (size: %s). Please start from left top corner%n", ship.getName(), ship.getSize());
 
-                String positionInput = scanner.next();
-                ship.addPosition(positionInput);
-                telemetry.trackEvent("Player_PlaceShipPosition", "Position", positionInput, "Ship", ship.getName(), "PositionInShip", Integer.valueOf(i).toString());
-            }
+            System.out.println("Enter coordinates of left top corner and direction for right or down (i.e A3R or A3D):");
+            String positionInput = scanner.next();
+            ship.placeLeftTopCorner(positionInput);
+            telemetry.trackEvent("Player_PlaceLeftTopShipPosition", "Position", positionInput, "Ship", ship.getName(), "PositionInShip");
+
+            System.out.println("Your ship is ready");
+
+//            System.out.println("\n----\n"+ ship.toString()+ "\n----\n");
         }
     }
 

@@ -9,8 +9,7 @@ import org.scrum.psd.battleship.controller.dto.Ship;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class GameShould {
 
@@ -73,5 +72,30 @@ public class GameShould {
         for (int i = 0; i < 10; i++) {
            assertTrue(ShipsFactory.SETUPS.containsValue(factory.createShips()));
         }
+    }
+
+    @Test
+    public void allowPlaceHorizontalShipForA3R() {
+
+        Ship ship = new Ship("Patrol Boat", 2, Color.ORANGE);
+        ship.placeLeftTopCorner("a3R");
+
+        assertArrayEquals(new Position[]{
+                new Position(Letter.A,3),
+                new Position(Letter.A,4)
+        }, ship.getPositions().toArray());
+    }
+
+    @Test
+    public void allowPlaceVerticalShipForA3D() {
+
+        Ship ship = new Ship("Patrol Boat", 2, Color.ORANGE);
+        ship.placeLeftTopCorner("a3d");
+
+        assertArrayEquals(new Position[]{
+                new Position(Letter.A,3),
+                new Position(Letter.B,3)
+        }, ship.getPositions().toArray());
+
     }
 }
